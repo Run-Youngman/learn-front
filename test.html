@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui"> 
+ <title>Test</title> 
+ <style type="text/css">  
+  .common { resize: none; width: 200px; height: 50px; }   
+  .hide{  position: fixed; left: -9999px; }
+  .background {width:30px;background-color: green}
+  .flex {display: flex; flex-wrap: nowrap;}
+  .children-1 {width:1000px;height:50px;background-color: green;margin-left: 10px;}
+ </style>
+</head>
+<body> 
+ <textarea class="common"  placeholder="测试测试测试" id="txt"></textarea> 
+ <textarea class="common hide"   disabled  placeholder="edit" id="edit"></textarea> 
+ <div class='background'>123</div><span>123</span><p>123</p>
+ <div class='flex'>
+   <div class='children-1'></div>
+   <div class='children-1'></div>
+   <div class='children-1'></div>
+   <div class='children-1'></div>
+   <div class='children-1'></div>
+ </div>
+ </div>
+ <script type="text/javascript">  
+  const txt = document.getElementById("txt");  
+  const edit = document.getElementById("edit");  
+  txt.addEventListener('input', (e) => {  
+     edit.innerText = e.target.value; 
+     txt.style.height = edit.scrollHeight + 'px'; 
+   }, false); 
+ </script>
+</body>
+</html>

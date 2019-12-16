@@ -1,0 +1,25 @@
+.box {
+	width: 200px;
+	height: 200px;
+    display: flex;
+    border: 1px solid rgb(59,176,168);
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-content: space-between;
+}
+
+.item {
+	width: 60px;
+	height: 60px;
+	background-color: rgb(59,176,168);
+}
+
+.box_center {
+	width: 200px;
+	height: 200px;
+	display: flex;
+	margin-top: 20px;
+    border: 1px solid rgb(59,176,168);
+    justify-content: center;
+    align-items: center;
+}

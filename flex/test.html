@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8"/>
+	<title>安徽绩溪培训系统</title>
+	<style>
+	html,body {
+	height: 100%;
+	width: 100%;
+	margin: 0px;
+	padding: 0px;
+};
+	.main {
+		height: 100%;
+		width: 100%;
+	}
+
+	a[href="http://www.baidu.com"][title="W3C Home"] {
+		font-size: 200%;
+	}
+
+	a[class~="test2"] { /*部分匹配，即空格分割的属性值中包含test2的项，可用于其他属性*/
+		color: green;
+	}
+
+	h1 > strong {
+		color: red; /* 限定只有临近子元素才会产生效果 */
+	}
+
+	li + li {
+		font-weight: bold; /* 限定只有临近兄弟元素才会产生效果 */
+	}
+
+	.header {
+		height: 100px;
+		background-color: black;
+	}
+	.footer {
+		height: 100%;
+		background-color: red;
+	}
+
+	li:first-child { /* 注意是li:first-child而不是 ul:first-child; */
+		text-transform: uppercase;
+	}
+
+	h2:first-letter {
+		font-size: 200%;
+	}
+	.big {
+		font-size: 300% !important;
+	}
+	h3 {
+		font-size: 200% !important;
+	}
+	ul {
+		color: gray; /* 可以被子元素继承 */
+	}
+	.something-meaningful {
+		background: #655;
+		padding: .8em;
+	}
+	.something-meaningful > div {
+		background: tan;
+		border-radius: .8em;
+		padding: 1em;
+	}
+	
+</style>
+</head>
+<body>
+	<div class="main">
+		<blockquote>alksd阿萨水电费胜多负少阿斯顿发送到是的发送到发额本公阿萨水电费胜多负少阿斯顿发送到是的发送到发额本公阿萨水电费胜多负少阿斯顿发送到是的发送到发额本公告jfas</blockquote>
+		<p>asdfasdf</p>
+		<a class="test1 test2" href="http://www.baidu.com" title="W3C Home">asd</a><br />
+		<a class="test3 test2" href="http://www.baidu.com">asd</a><br />
+		<a class="test4 test5" href="http://www.baidu.comm" title="W3C2 Home">asd</a>
+
+		<h1><strong>123</strong>lalala<strong>123</strong></h1>
+		<ul>
+			<li>lllll</li>
+			<li>lllll</li>
+			<li>lllll</li>
+		</ul>
+		<h2>This</h2>
+		<h2><h2:first-letter>T</h2:first-letter>his</h2> <!-- 上面那句话就相当于这样，是一个伪元素 -->
+		<h3 style="font-size: 100%;" class="big">123</h3>
+		<div class="something-meaningful"><div>
+			I have a nice subtle inner rounding,
+			don't I look pretty?
+			</div></div>
+	</div>
+</body>
+
+</html>

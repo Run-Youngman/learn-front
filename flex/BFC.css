@@ -1,0 +1,14 @@
+div {  
+  width:300px;  
+}  
+.aside {  
+  width: 100px;  
+  height: 250px;  
+  float: left;  
+  background: black;  
+}  
+.main {  
+  height:200px;  
+  background-color:red;  
+  overflow: hidden;    /*//添加这句话就可以实现内容是否超出界限*/
+}  
