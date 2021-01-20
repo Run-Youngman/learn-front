@@ -14,6 +14,7 @@ typeof new String('abc') === 'object'  // 但是应该为String类型
 ************************************************************************************************************
 
 instanceof: 可以准确判断复杂引用的数据类型，但是不能正确判断基础数据类型
+语法： object instanceof constructor
 let Car = function() {}
 let benz = new Car()
 benz instanceof Car // true
