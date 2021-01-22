@@ -45,16 +45,25 @@ let obj2 = JSON.parse(str)；
 * 无法拷贝对象的循环应用，即对象成环 (obj[key] = obj)。
 
 
-const deepClone = (target) => {
-	if (typeof target === 'object' && target !== null) {
-		const cloneTarget = Array.isArray(target) ? [] : {}
-		for (let i in target) {
-			if (target.hasOwnProperty(i)) { // for in 会遍历出一些继承来的属性
-				cloneTarget[i] = target[i]
-			}
-		}
-		return cloneTarget
-	} else {
-		return target
-	}
+function deepClone(obj) {
+  let cloneObj = Array.isArray(obj) ? []: {};
+  for(let key in obj) {
+    if(typeof obj[key] ==='object') { 
+      cloneObj[key] = deepClone(obj[key])  //是对象就再次调用该函数递归
+    } else {
+      cloneObj[key] = obj[key]  //基本类型的话直接复制值
+    }
+  }
+  return cloneObj
 }
+
+
+1.这个深拷贝函数并不能复制不可枚举的属性以及 Symbol 类型；
+
+
+2.这种方法只是针对普通的引用类型的值做递归复制，而对于 Array、Date、RegExp、Error、Function 这样的引用类型并不能正确地拷贝；
+
+
+3.对象的属性里面成环，即循环引用没有解决。
+
+稍稍优于JSON.stringify
