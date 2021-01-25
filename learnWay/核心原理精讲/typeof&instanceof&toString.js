@@ -6,11 +6,15 @@ typeof: 可以准确的判断typeof 不为'object'类型的数据[Symbols\Undefi
 typeof 37 === 'number'
 typeof NaN === 'number'
 
+typeof new String('abc') === 'object' 
+typeof String('123') = 'string'
+typeof [] === 'object'
 
 例外：typeof null === 'object'
-
-错误：
-typeof new String('abc') === 'object'  // 但是应该为String类型
+typeof 运算符用于判断对象的类型，但是对于一些创建的对象（引用类型），都会返回'object'，比如
+typeof new String('abc') === 'object' ,如果在控制台里打印oo ,你会看到  String {"123"}
+但是：
+Object.prototype.toString.call(oo).replace(/^\[object (\S+)\]$/, '$1')   // String
 ************************************************************************************************************
 
 instanceof: 可以准确判断复杂引用的数据类型，但是不能正确判断基础数据类型
@@ -22,6 +26,13 @@ let car = new String('Mercedes Benz')
 car instanceof String // true
 let str = 'Covid-19'
 str instanceof String // false，但是str真的是'String'数据类型
+
+// 不可传递性
+var oo = new String('123')
+
+oo instanceof String // true
+String instanceof Function // true
+oo instanceof Function // false
 
 ***************************************************************************************************************
 getPrototype:   向上一层一层扒原型链

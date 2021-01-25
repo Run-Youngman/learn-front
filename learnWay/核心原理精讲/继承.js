@@ -1,3 +1,4 @@
+如果函数前面带上new 来调用，背地里将会创建一个连接到该函数的prototype成员的新对象，同时this会绑定到这个新对象上。
 1、 prototype
 function Parent() {
 	this.name = 'name'
